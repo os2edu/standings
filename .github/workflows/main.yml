@@ -19,11 +19,13 @@ jobs:
         uses: actions/setup-node@v3.0.0
         with:
           node-version: '16.x'
-          cache: 'pnpm'
       - name: create env file
         run: |
           echo TOKEN=${{ secrets.AUTH_TOKEN }} >> spider/.env
           echo SESSION_TOKEN=${{ secrets.SESSION_TOKEN }} >> spider/.env
+      - name: add pnpm 
+        run: |
+          npm i pnpm -g
       - name: install spider pkg and run
         run: |
           cd spider && pnpm install
