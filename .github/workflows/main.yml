@@ -28,17 +28,17 @@ jobs:
           npm i pnpm -g
       - name: install spider pkg and run
         run: |
-          cd spider && pnpm install
+          cd spider && pnpm install --no-frozen-lockfile
           pnpm run start
       - name: build beta pages
         run: |
-          cd web-beta && pnpm install
+          cd web-beta && pnpm install --no-frozen-lockfile
           pnpm run build
           pnpm run export
           mv out ../build
       - name: build pages
         run: |
-          cd web && pnpm install
+          cd web && pnpm install --no-frozen-lockfile
           pnpm run build
           cp dist ../build/older_version -r
       - name: GitHub Pages
