@@ -26,10 +26,11 @@ jobs:
       - name: add pnpm 
         run: |
           npm i pnpm -g
+          npm i yarn -g
       - name: install spider pkg and run
         run: |
-          cd spider && pnpm install --no-frozen-lockfile
-          pnpm run start
+          cd spider && yarn
+          yarn start
       - name: build beta pages
         run: |
           cd web-beta && pnpm install --no-frozen-lockfile
