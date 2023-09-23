@@ -19,24 +19,25 @@ jobs:
         uses: actions/setup-node@v3.0.0
         with:
           node-version: '16.x'
+          cache: 'pnpm'
       - name: create env file
         run: |
           echo TOKEN=${{ secrets.AUTH_TOKEN }} >> spider/.env
           echo SESSION_TOKEN=${{ secrets.SESSION_TOKEN }} >> spider/.env
       - name: install spider pkg and run
         run: |
-          cd spider && npm install
-          npm run start
+          cd spider && pnpm install
+          pnpm run start
       - name: build beta pages
         run: |
-          cd web-beta && npm install
-          npm run build
-          npm run export
+          cd web-beta && pnpm install
+          pnpm run build
+          pnpm run export
           mv out ../build
       - name: build pages
         run: |
-          cd web && npm install
-          npm run build
+          cd web && pnpm install
+          pnpm run build
           cp dist ../build/older_version -r
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3.0.0
