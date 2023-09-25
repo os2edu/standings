@@ -64,6 +64,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
       setCurrLink(key.split('/')[1] as LinksKey)
     } else {
       setCurrLink('/')
+      
     }
     router.push(key)
   }
@@ -80,7 +81,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
     <Layout
       headerProps={{
         extra: {
-          customRender: <Nav />
+          // customRender: <Nav />
         }
       }}
       style={{

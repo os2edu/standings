@@ -3,12 +3,9 @@
 name: GitHub Classroom Workflow
 
 on:
-  schedule:
-    - cron: '0 */1 * * *'
   push:
     branches:
       - main
-  workflow_dispatch:
 jobs:
   build:
     name: Autograding
@@ -26,22 +23,14 @@ jobs:
       - name: add pnpm 
         run: |
           npm i pnpm -g
-          npm i yarn -g
-      - name: install spider pkg and run
-        run: |
-          cd spider && yarn
-          yarn start
+    
       - name: build beta pages
         run: |
           cd web-beta && pnpm install --no-frozen-lockfile
           pnpm run build
           pnpm run export
           mv out ../build
-      - name: build pages
-        run: |
-          cd web && pnpm install --no-frozen-lockfile
-          pnpm run build
-          cp dist ../build/older_version -r
+          
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3.0.0
         with:
