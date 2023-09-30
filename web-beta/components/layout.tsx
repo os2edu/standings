@@ -71,7 +71,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     location.pathname.split('/')[2] && setCurrLink(location.pathname.split('/')[2] as LinksKey)
-  }, [])
+  }, [location.pathname])
 
   useEffect(() => {
     setBreadcrumb(currLink === '/' ? '首页' : Links[currLink].year + Links[currLink].label)
@@ -125,7 +125,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
           >
             {children}
             {currLink !== 'link2' && <footer style={footerStyle}>
-              Rustlings Ranking ©2022 Created by <a href="https://github.com/yfblock">yfblock</a>
+              Rustlings Standings ©2023 Created by <a href="https://github.com/yfblock">yfblock</a>
             </footer>}
 
           </Content>

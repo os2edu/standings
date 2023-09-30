@@ -8,7 +8,7 @@ type Iprops = {
 
 const Iframe = (props: Iprops) => {
     return <>
-        {props.src === '/' ?<div className={style['empty']}> <Empty description='抱歉,暂无数据' /></div> : <iframe id="myIframe" className={style['iframe-container']} src={props.src} onLoad={() => {
+        {props.src === '/' ?<div className={style['empty']}> <Empty description='暂无数据，敬请期待' /></div> : <iframe id="myIframe" className={style['iframe-container']} src={props.src} onLoad={() => {
             console.log('onload');
             props.setLoading(false)
         }} ></iframe>}

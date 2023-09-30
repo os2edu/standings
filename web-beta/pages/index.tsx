@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -12,21 +13,19 @@ export default function Home() {
 
       <main className={styles.main}>
         <h2 className={styles.title}>
-        秋季训练营
+          2023秋冬季训练营
         </h2>
 
-        <div className={styles.grid}>
-          <a href="https://github.com/os2edu/rustlings" className={styles.card}>
-            <h2>Rustlings &rarr;</h2>
-            <p>秋季训练营 Rustlings 训练</p>
-          </a>
-        </div>
-      </main>
-      
-      <p className={styles.description}>
-          2022 OS 夏季训练营排行榜{' '}
-          <a href='https://learningos.github.io/classroom-grading/'>点击查看</a>
+        {/* <div className={styles.grid}>
+          <Link href="/2023-autumn-Rust" className={styles.card}>
+            <p>秋季训练营</p>
+          </Link>
+        </div> */}
+        <p className={styles.description}>
+          2023 Rust 秋冬季训练营排行榜{' '}
+          <Link href='/2023-autumn-Rust'>点击查看</Link>
         </p>
+      </main>
     </div>
   )
 }

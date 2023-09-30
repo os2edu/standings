@@ -1,12 +1,12 @@
 export const Links: {
     [key: string]: MenuLink
 } = {
-    link1: { key: '/link1', url: "https://learningos.github.io/classroom-grading", label: 'rCore内核排行榜', year: '2022春夏季' }, //2022 夏季os
-    link2: { key: '/link2', url: "https://os2edu.cn/ranking/rank", label: 'OS训练营排行榜', year: '2022秋冬季' }, //2022 秋冬季os
-    link3: { key: '/link3', url: "https://learningos.github.io/rust-rustlings-ranking", label: 'Rust编程排行榜', year: '2023春夏季' },//2023春夏季 rust
-    link4: { key: '/link4', url: "https://learningos.github.io/2023S-OS-uCore-Classroom-Rank-list/", label: 'uCore内核排行榜', year: '2023春夏季' },//2023春夏季 基于C语言的uCore Tutorial ClassRoom排行榜
-    link5: { key: '/link5', url: "https://learningos.github.io/2023S-OS-rCore-Classroom-Rank-list/", label: 'rCore内核排行榜', year: '2023春夏季' },//2023春夏季 基于Rust语言的rCore Tutorial ClassRoom排行榜
-    link6: { key: '/link6', url: "/", label: 'Rust编程排行榜', year: '2023秋冬季' },
+    '2022-spring-rCore': { key: '/2022-spring-rCore', url: "https://learningos.github.io/classroom-grading", label: 'rCore内核排行榜', year: '2022春夏季' }, //2022 夏季os
+    '2022-autumn-OS': { key: '/2022-autumn-OS', url: "https://os2edu.cn/ranking/rank", label: 'OS训练营排行榜', year: '2022秋冬季' }, //2022 秋冬季os
+    '2023-spring-Rust': { key: '/2023-spring-Rust', url: "https://learningos.github.io/rust-rustlings-ranking", label: 'Rust编程排行榜', year: '2023春夏季' },//2023春夏季 rust
+    '2023-spring-uCore': { key: '/2023-spring-uCore', url: "https://learningos.github.io/2023S-OS-uCore-Classroom-Rank-list/", label: 'uCore内核排行榜', year: '2023春夏季' },//2023春夏季 基于C语言的uCore Tutorial ClassRoom排行榜
+    '2023-spring-rCore': { key: '/2023-spring-rCore', url: "https://learningos.github.io/2023S-OS-rCore-Classroom-Rank-list/", label: 'rCore内核排行榜', year: '2023春夏季' },//2023春夏季 基于Rust语言的rCore Tutorial ClassRoom排行榜
+    '2023-autumn-Rust': { key: '/2023-autumn-Rust', url: "/", label: 'Rust编程排行榜', year: '2023秋冬季' },
 }
 
 export type MenuLink = {
