@@ -16,7 +16,7 @@ export type MenuLink = {
     year: string,
 }
 
-export type LinksKey = 'link1' | 'link2' | 'link3' | 'link4' | 'link5' | 'link6';
+export type LinksKey = '2022-spring-rCore' | '2022-autumn-OS' | '2023-spring-Rust' | '2023-spring-uCore' | '2023-spring-rCore' | '2023-autumn-Rust';
 
 export const getFormatLinks = () => {
     const res: { [key: string]: Array<MenuLink> } = {}
