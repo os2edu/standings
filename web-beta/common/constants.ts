@@ -6,13 +6,13 @@ export const Links: {
     '2023-spring-Rust': { key: '/2023-spring-Rust', url: "https://learningos.github.io/rust-rustlings-ranking", label: 'Rust编程排行榜', year: '2023春夏季' },//2023春夏季 rust
     '2023-spring-uCore': { key: '/2023-spring-uCore', url: "https://learningos.github.io/2023S-OS-uCore-Classroom-Rank-list/", label: 'uCore内核排行榜', year: '2023春夏季' },//2023春夏季 基于C语言的uCore Tutorial ClassRoom排行榜
     '2023-spring-rCore': { key: '/2023-spring-rCore', url: "https://learningos.github.io/2023S-OS-rCore-Classroom-Rank-list/", label: 'rCore内核排行榜', year: '2023春夏季' },//2023春夏季 基于Rust语言的rCore Tutorial ClassRoom排行榜
-    '2023-autumn-Rust': { key: '/2023-autumn-Rust', url: "/", label: 'Rust编程排行榜', year: '2023秋冬季' },
+    '2023-autumn-Rust': { key: '/2023-autumn-Rust', url: "https://os2edu.cn/2023-autumn-os-ranking/", label: 'Rust编程排行榜', year: '2023秋冬季' },
 }
 
 export type MenuLink = {
     key: string,
     url: string,
-    label: string,
+    label: string
     year: string,
 }
 

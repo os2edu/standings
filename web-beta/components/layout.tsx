@@ -5,6 +5,7 @@ import Nav from './nav'
 import { Layout as AntdLayout, Breadcrumb, Menu, MenuProps } from 'antd'
 import { HomeOutlined, LineChartOutlined, RocketOutlined } from '@ant-design/icons'
 import { Links, LinksKey, getFormatLinks } from '../common/constants'
+import LayOutContext from './context'
 
 const Layout = dynamic(
   () => import('@os2edu/layout'),
@@ -64,7 +65,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
       setCurrLink(key.split('/')[1] as LinksKey)
     } else {
       setCurrLink('/')
-      
+
     }
     router.push(key)
   }
@@ -88,49 +89,51 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         height: '100vh',
       }}
     >
-      <AntdLayout style={{}}>
-        <Sider width={240}
-          style={{
-            overflowY: 'auto',
-            overflowX: 'hidden',
-            background: '#fff',
-            position: 'fixed',
-            left: 0,
-            top: 56,
-            bottom: 0,
-            paddingTop: '10px'
-          }}
-        >
-          <Menu
-            mode="inline"
-            style={{ height: '100%', borderRight: 0 }}
-            items={menuItems}
-            defaultSelectedKeys={[currLink]}
-            defaultOpenKeys={[...menuItems?.map(item => item?.key) as Array<string>]}
-            onClick={(e) => onMenuClick(e)}
-          />
-        </Sider>
-        <AntdLayout style={{ padding: '0 24px 24px', marginLeft: '240px' }}>
-          <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>{breadcrumb}</Breadcrumb.Item>
-          </Breadcrumb>
-          <Content
-            style={{
-              // padding: 24,
-              margin: 0,
-              minHeight: 280,
-              background: '#fff',
+      <LayOutContext.Provider value={{setCurrLink}}>
+          <AntdLayout style={{}}>
+            <Sider width={240}
+              style={{
+                overflowY: 'auto',
+                overflowX: 'hidden',
+                background: '#fff',
+                position: 'fixed',
+                left: 0,
+                top: 56,
+                bottom: 0,
+                paddingTop: '10px'
+              }}
+            >
+              <Menu
+                mode="inline"
+                style={{ height: '100%', borderRight: 0 }}
+                items={menuItems}
+                defaultSelectedKeys={[currLink]}
+                defaultOpenKeys={[...menuItems?.map(item => item?.key) as Array<string>]}
+                onClick={(e) => onMenuClick(e)}
+              />
+            </Sider>
+            <AntdLayout style={{ padding: '0 24px 24px', marginLeft: '240px' }}>
+              <Breadcrumb style={{ margin: '16px 0' }}>
+                <Breadcrumb.Item>{breadcrumb}</Breadcrumb.Item>
+              </Breadcrumb>
+              <Content
+                style={{
+                  // padding: 24,
+                  margin: 0,
+                  minHeight: 280,
+                  background: '#fff',
 
-            }}
-          >
-            {children}
-            {currLink !== '2022-autumn-OS' && <footer style={footerStyle}>
-              Rustlings Standings ©2023 Created by <a href="https://github.com/yfblock">yfblock</a>
-            </footer>}
+                }}
+              >
+                {children}
+                {currLink !== '2022-autumn-OS' && <footer style={footerStyle}>
+                  Rustlings Standings ©2023 Created by <a href="https://github.com/yfblock">yfblock</a>
+                </footer>}
 
-          </Content>
-        </AntdLayout>
-      </AntdLayout>
+              </Content>
+            </AntdLayout>
+          </AntdLayout>
+      </LayOutContext.Provider>
     </Layout>
   )
 }
